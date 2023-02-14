@@ -4,6 +4,7 @@ let i = 0;
 let soma = 0;
 while(i < listaNumeros.length){
     soma = soma + listaNumeros[i];
-    console.log(soma);
     i++;
 }
+
+console.log(soma);
