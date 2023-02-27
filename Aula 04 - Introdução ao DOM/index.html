@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and the DOM</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 id="headline">Meu Dia</h1>
+        <div class="group">
+          <label for="main">Qual é a tarefa?</label>
+          <input type="text" id="main" class="input-main">
+          <button id="btn-main">Adicionar Tarefa</button>
+        </div>
+      </header>
+
+      <button class="btn-toggle">Hide List</button>
+
+      <div class="list-container">
+        <ul aria-live="polite">
+          <li>Fazer Café</li>
+          <li>Praticar JS</li>
+          <li>Passear com o Bruce</li>
+          <li>Assistir playlist to Youtube sobre DOM</li>
+          <li>Ir nadar no lago congelado</li>
+          <li>Tocar contra baixo no Rocksmith</li>
+        </ul>
+        <button class="btn-remove">Remover ultima tarefa</button>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
