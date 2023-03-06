@@ -1,3 +1,5 @@
+document.querySelectorAll(".container")[1].setAttribute("id", "containerFelinos");
+
 const listaFelinos = [
     {
       imagemFelinoURL: "./imagens/tiger.jpg",
@@ -29,24 +31,24 @@ const listaFelinos = [
         nomeFelino: "O guepardo",
         descriFelino: `O guepardo, ou chita (Acinonyx jubatus) é um membro atípico da família felina. É o único representante vivo do gênero Acinonyx. Ele caça graças à sua visão e grande velocidade. É o animal terrestre mais rápido do mundo, atingindo uma velocidade máxima de 115 km/h em corridas de até quinhentos metros.`
     },
-]
+    {
+        imagemFelinoURL: "./imagens/chita.jpg",
+        nomeFelino: "Gato Doméstico",
+        descriFelino: `O guepardo, ou chita (Acinonyx jubatus) é um membro atípico da família felina. É o único representante vivo do gênero Acinonyx. Ele caça graças à sua visão e grande velocidade. É o animal terrestre mais rápido do mundo, atingindo uma velocidade máxima de 115 km/h em corridas de até quinhentos metros.`
+    },
+];
+for(let felino of listaFelinos) {
+    let itemFelino = `<div class="item">
+    <img src="${felino.imagemFelinoURL}">
+    <h2>${felino.nomeFelino}</h2>
+    <p>${felino.descriFelino}</p>
+    </div>`
 
+    let novoFelino = document.createElement('div');
 
-let itemFelino = `<div class="item">
-<img src="./imagens/tiger.jpg">
-<h2>O tigre</h2>
-<p>
-  O tigre (Panthera tigris) é uma das espécies da subfamília Pantherinae (família Felidae)
-  pertencente ao gênero Panthera. É encontrado de forma nativa apenas no continente asiático; é um predador
-  carnívoro e
-  é a maior espécie de felino do mundo junto com o leão.
-</p>
-</div>`
+    let grupoFelinos = document.getElementById("containerFelinos");
 
-let novoFelino = document.createElement('div');
+    novoFelino.innerHTML = itemFelino;
 
-let grupoFelinos = document.getElementById("containerFelinos");
-
-novoFelino.innerHTML = itemFelino;
-
-grupoFelinos.appendChild(novoFelino);
+    grupoFelinos.appendChild(novoFelino);
+}
