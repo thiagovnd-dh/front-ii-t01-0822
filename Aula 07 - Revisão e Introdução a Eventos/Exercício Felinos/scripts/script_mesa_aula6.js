@@ -1,4 +1,4 @@
-document.querySelectorAll(".container")[1].setAttribute("id", "containerFelinos");
+document.querySelectorAll(".container")[1].id = "containerFelinos";
 
 const listaFelinos = [
     {
@@ -30,25 +30,20 @@ const listaFelinos = [
         imagemFelinoURL: "./imagens/chita.jpg",
         nomeFelino: "O guepardo",
         descriFelino: `O guepardo, ou chita (Acinonyx jubatus) é um membro atípico da família felina. É o único representante vivo do gênero Acinonyx. Ele caça graças à sua visão e grande velocidade. É o animal terrestre mais rápido do mundo, atingindo uma velocidade máxima de 115 km/h em corridas de até quinhentos metros.`
-    },
-    {
-        imagemFelinoURL: "./imagens/chita.jpg",
-        nomeFelino: "Gato Doméstico",
-        descriFelino: `O guepardo, ou chita (Acinonyx jubatus) é um membro atípico da família felina. É o único representante vivo do gênero Acinonyx. Ele caça graças à sua visão e grande velocidade. É o animal terrestre mais rápido do mundo, atingindo uma velocidade máxima de 115 km/h em corridas de até quinhentos metros.`
-    },
+    }
 ];
-for(let felino of listaFelinos) {
-    let itemFelino = `<div class="item">
-    <img src="${felino.imagemFelinoURL}">
-    <h2>${felino.nomeFelino}</h2>
-    <p>${felino.descriFelino}</p>
-    </div>`
+    listaFelinos.forEach(felino => {
+        let itemFelino = `<div class="item">
+        <img src="${felino.imagemFelinoURL}">
+        <h2>${felino.nomeFelino}</h2>
+        <p>${felino.descriFelino}</p>
+        </div>`
 
-    let novoFelino = document.createElement('div');
+        let novoFelino = document.createElement('div');
 
-    let grupoFelinos = document.getElementById("containerFelinos");
+        let grupoFelinos = document.getElementById("containerFelinos");
 
-    novoFelino.innerHTML = itemFelino;
+        novoFelino.innerHTML = itemFelino;
 
-    grupoFelinos.appendChild(novoFelino);
-}
+        grupoFelinos.appendChild(novoFelino);
+    });
