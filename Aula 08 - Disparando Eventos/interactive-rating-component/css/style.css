@@ -70,11 +70,6 @@ body {
     border-radius: 50%;
 }
 
-.rating-group .selecionado {
-    background-color: white;
-    color: hsl(213, 19%, 18%);
-}
-
 .rating-group {
     margin: 35px 0;
 }
@@ -99,4 +94,3 @@ body {
     background-color: white;
     cursor: pointer;
 }
-
