@@ -70,9 +70,8 @@ button {
     background-color: #1F1F1F;
     display: block;
     color: #361313;
-    margin:  0.5em 1em;
     padding: 0.5em;
-    border-radius: 0.5em;
+    border-radius: 0em 0em 0.5em 0.5em;
     height: 2em;
 }
 
@@ -86,4 +85,5 @@ button {
 
 .campo-formulario.error input {
     border-color: #ff3860;
+    border-radius: 0.5em 0.5em 0em 0em;
 }
