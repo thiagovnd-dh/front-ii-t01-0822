@@ -1,0 +1,89 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(15, 15, 20);
+}
+
+.container {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.form-cadastro {
+    background-color: #1F1F1F;
+    border-top: 0.5em solid rgb(223, 164, 55);
+    color: white;
+    border-radius: 0.5em;
+    padding: 2em;
+    width: 70%;
+}
+
+.campo-formulario {
+    margin-bottom: 2em;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.campo-formulario input {
+    height:3em;
+    width: 100%;
+    background-color: #1F1F1F;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    color: white;
+    font-size: 1em;
+    outline: 0;
+    padding: 0.5em;
+}
+
+.campo-formulario input:focus {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+button {
+    background-color: rgb(223, 164, 55);
+    color: #1F1F1F;
+    height: 2em;
+    width: 10em;
+    border-radius: 0.5em;
+    float: right;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.campo-formulario .mensagem-erro {
+    background-color: #1F1F1F;
+    display: block;
+    color: #361313;
+    margin:  0.5em 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    height: 2em;
+}
+
+.campo-formulario.error .mensagem-erro {
+    background-color: #eea5a5;
+}
+
+.campo-formulario.success input {
+    border-color: #09c372;
+}
+
+.campo-formulario.error input {
+    border-color: #ff3860;
+}
