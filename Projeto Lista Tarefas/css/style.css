@@ -1,0 +1,114 @@
+/*GLOBAL*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.8rem;
+    color: #222;
+    background-color: #f2f2f2;
+  }
+  
+  .pageContainer {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  
+  /*HEADER*/
+  
+  .mainHeader {
+    padding: 2rem 0;
+  }
+  
+  /*MAIN NAV*/
+  
+  .mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navMenu {
+    list-style: none;
+  }
+  
+  /*MAIN*/
+  
+  .mainContent {
+    width: 100%;
+  }
+  
+  /*SECTION TASKS*/
+  
+  .sectionList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  
+  .campoNovaTarefa {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .listInput {
+    border: 0;
+    outline: none;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  
+  .icon {
+    font-size: 2.4rem;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon:hover {
+    color: rgb(29, 155, 240);
+    cursor: pointer;
+  }
+  
+  /*LIST ITEMS*/
+  
+  .listaDeTarefas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  
+  .tarefa {
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+  
+  .tarefa:first-child {
+    border-top: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
