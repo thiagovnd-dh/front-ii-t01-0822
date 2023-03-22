@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
+}
+
+body {
+  font-size: 2em;
+}
