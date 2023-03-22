@@ -1,34 +1,8 @@
-localStorage.setItem(
-    'tarefasLS', `[
-        {"tarefaProp":"Lavar Louça","completa":false},
-        {"tarefaProp":"Limpar Banheiro","completa":false},
-        {"tarefaProp":"Colar Fotos no mural da Família","completa":false}
-    ]`);
-
 // Declaração de variaveis
 let listaDeTarefas = document.querySelector('.listaDeTarefas');
 let botaoLixo = document.querySelectorAll('.fi-rr-trash');
 const botaoMais = document.querySelector('.fi-rr-plus');
 const iconeLixeira = '<i class="icon fi fi-rr-trash"></i>'
-
-
-//Carrega as Tarefas do Json
-function carregarTarefas() {
-    //Lopp nas tarefas do Local Storage para o DOM
-    if(localStorage.getItem("tarefasLS") != null) {
-        let tarefasVar = JSON.parse(localStorage.getItem("tarefasLS"));
-        tarefasVar.forEach(tarefaElemento => {
-            console.log(tarefaElemento);
-            let li = document.createElement("li");
-            li.classList.add('tarefa');
-            li.innerHTML = `${tarefaElemento.tarefaProp}` + iconeLixeira;
-            listaDeTarefas.appendChild(li);
-        });
-    } else {
-        console.log('Primeira vez');
-    }
-}
-carregarTarefas();
 
 // Ativa a funcionalidade das lixeiras caso hajam
 // tarefas previamente na lista
