@@ -11,7 +11,7 @@
 async function puxarDados() {
     const resposta = await fetch("https://dog.ceo/api/breeds/list/all");
     const dados = await resposta.json();
-    console.log(dados);
+    // console.log(dados);
     criarListaRacas(dados.message);
 }
 
