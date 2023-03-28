@@ -28,10 +28,20 @@ function criarListaRacas(listaRacas) {
     `;
 }
 
-function carregarPorRaca(raca) {
+async function carregarPorRaca(raca) {
     if(raca != "Escolha um cachorro ou raça") {
-        console.log(`Escolheu ${raca}`);
+        const resposta = await fetch(`https://dog.ceo/api/breed/${raca}/images`);
+        listaImagens = await resposta.json();
+        // console.log(listaImagens.message);
     } else {
         return;
     }
+    criarSlideShow(listaImagens.message);
+    
+}
+
+function criarSlideShow (imagens) {
+    document.getElementById("slideshow").innerHTML = `
+    <div class="slide" style="background-image: url('${imagens[0]}');"></div>
+    `
 }
