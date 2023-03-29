@@ -23,7 +23,7 @@ async function fazerLogin() {
     try{
         const resposta = await fetch(`https://todo-api.ctd.academy/v1/users/login`, configuracoesRequisicao);
         let chaveJwt = await resposta.json();
-        console.log(chaveJwt.jwt);\
+        console.log(chaveJwt.jwt);
     }
     catch(erro) {
         console.log(erro);
