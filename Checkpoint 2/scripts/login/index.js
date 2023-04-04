@@ -3,7 +3,7 @@ let campoEmailLogin = document.getElementById("inputEmail");
 let campoSenhaLogin = document.getElementById("inputPassword");
 let botaoAcessarLogin = document.getElementById("botaoAcessar");
 let formularioLogin = document.getElementById("formularioLogin");
-
+ 
 // Variáveis que serão normalizadas
 let campoEmailLoginNormalizado;
 let campoSenhaLoginNormalizado;
@@ -87,11 +87,11 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
       console.log("Jwt recebido\n");
       console.log(jwtRecebido);
 
-      /// Setando o token usando Cookies
-      document.cookie = `jwt=${jwtRecebido}`;
+      ///Também é possivel setar utilizando o token usando Cookies
+      //document.cookie = `jwt=${jwtRecebido}`;
 
-      /// Também é possivel setar utilizando o Storage no navegador.
-      //sessionStorage.setItem("jwt", jwtRecebido);
+      ///  Setando o Storage no navegador.
+      sessionStorage.setItem("jwt", jwtRecebido);
 
       /// Direciona o usuário para a tela de tarefas após sucesso ao logar
       window.location.href = "tarefas.html";

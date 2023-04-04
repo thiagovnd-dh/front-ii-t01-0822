@@ -6,56 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-Do App</title>
-
+  <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
   <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
   <link rel="stylesheet" href="styles/acesso.css">
-
-  <!-- ---------------------- lógica aplicada no registro -------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/signup.js"></script>
+  
 
 </head>
 
 <body>
+  <form>
+    <div class="form-header">
+      <p>To-Do App</p>
+    </div>
 
-  <div class="left">
-    <img src="./assets/pessoa-signup.png" alt="">
-  </div>
-  <div class="right">
-    <form>
-      <div class="form-header">
-        <p>To-Do App</p>
-      </div>
+    <label>
+      Nome:
+      <input type="text">
+    </label>
+    <label>
+      Sobrenome:
+      <input type="text">
+    </label>
+    <label>
+      Email:
+      <input type="email">
+    </label>
+    <label>
+      Senha:
+      <input type="password">
+    </label>
+    <label>
+      Repetir senha:
+      <input type="password">
+    </label>
 
-      <label>
-        Nome:
-        <input type="text">
-      </label>
-      <label>
-        Sobrenome:
-        <input type="text">
-      </label>
-      <label>
-        Email:
-        <input type="email">
-      </label>
-      <label>
-        Senha:
-        <input type="password">
-      </label>
-      <label>
-        Repetir senha:
-        <input type="password">
-      </label>
-
-      <button>Criar conta</button>
-
-    </form>
+    <button id="criarConta">Criar conta</button>
     <div class="ingressar">
       <a href="index.html">Já possui conta? Acesse aqui</a>
     </div>
-  </div>
-
+  </form>
+  <!-- ---------------------- lógica aplicada no registro -------------------- -->
+  <script src="./scripts/cadastro/cadastro.js"></script>
 </body>
 
 </html>
