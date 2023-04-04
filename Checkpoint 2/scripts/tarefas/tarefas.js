@@ -11,6 +11,7 @@ onload = () => {
         //O usuário tem um token JWT na memória
         // buscaUsuarioNaApi(jwt);
         buscaUsuarioNaApiAssincrono();
+        buscaTarefasApi()
     }
 }
 
@@ -54,8 +55,25 @@ async function buscaUsuarioNaApiAssincrono() {
           'authorization' : jwt
         },
       }
-    let resposta = await fetch(`${apiBaseUrl()}/users/getMe`, configuracoesRequisicao);
+      try {
+        let resposta = await fetch(`${apiBaseUrl()}/users/getMe`, configuracoesRequisicao);
+        let dados = await resposta.json();
+        console.log(dados.firstName);
+        renderizaNomeUsuario(dados);
+      } catch (error) {
+        console.log(erro);
+      }
+    
+}
+
+async function buscaTarefasApi() {
+    let configuracoesRequisicao = {
+        // method: 'GET', // Não é necessário escrever o GET
+        headers: {
+            'authorization' : jwt
+        },
+        }
+    let resposta  = await fetch(`${apiBaseUrl()}/tasks`, configuracoesRequisicao)
     let dados = await resposta.json();
-    console.log(dados.firstName);
-    renderizaNomeUsuario(dados);
+    console.log(dados);
 }
