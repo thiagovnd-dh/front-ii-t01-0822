@@ -72,8 +72,78 @@ async function buscaTarefasApi() {
         headers: {
             'authorization' : jwt
         },
-        }
+    }
     let resposta  = await fetch(`${apiBaseUrl()}/tasks`, configuracoesRequisicao)
     let dados = await resposta.json();
-    console.log(dados);
+    rederizaTarefas(dados)
+}
+
+let listaTarefasGlobal = [];
+
+function rederizaTarefas(listaTarefas) {
+    listaTarefasGlobal = listaTarefas;
+    
+    let tarefasPendentesDom = document.querySelector(".tarefas-pendentes");
+
+    for(let tarefa of listaTarefas) {
+        if(!tarefa.completed) {
+            //Tarefas Pendentes
+            let li = document.createElement('li');
+            li.classList.add("tarefa");
+            li.innerHTML = `
+                <div class="not-done"></div>
+                    <div class="descricao">
+                    <p class="nome">${tarefa.description}</p>
+                    <p class="timestamp">${tarefa.createdAt}</p>
+                </div>
+            `;
+            tarefasPendentesDom.appendChild(li);
+        }
+        else{
+            //Tarefas Completas
+        }
+    }
+}
+
+// Cadastra nova tarefa
+let botaoCadastrar = document.getElementById('botaoCriarTarefa');
+
+botaoCadastrar.addEventListener('click', evento => {
+    evento.preventDefault();
+    let descricaoTarefa = document.getElementById('novaTarefa');
+    if(descricaoTarefa.value != "") {
+        console.log('A tarefa não está vazia');
+        //Adiconar a tarefa na API
+
+        let corpoDaRequisicao = {
+            "description": descricaoTarefa.value,
+            "completed": false
+        }
+        let configuracoesRequisicao = {
+            method: 'POST',
+            body: JSON.stringify(corpoDaRequisicao),
+            headers: {
+                'Content-type': 'application/json',
+                'authorization' : jwt
+            },
+        }
+        fetch(`${apiBaseUrl()}/tasks`, configuracoesRequisicao)
+        .then(chamada => {
+            if(chamada.status == 201 || chamada.status == 200){
+                return chamada.json();
+            }
+            throw response;
+        }).then(dados => {
+            console.log(dados);
+            adicionarNovaTarefaDom(dados);
+        });
+        //Adicionar na DOM
+        descricaoTarefa.value = "";
+    } else {
+        alert('Escreva a descrição da tarefa');
+    }
+});
+
+function adicionarNovaTarefaDom(tarefa) {
+    console.log(tarefa.description);
 }
