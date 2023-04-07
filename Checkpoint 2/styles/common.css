@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
-
+@import url('./loader.css');
 :root {
   --primary: #7898FF;
   --secondary: #8E64C5;

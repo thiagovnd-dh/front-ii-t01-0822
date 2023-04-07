@@ -62,6 +62,7 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
 
     /// Utilizando Promisses
     //Chamando a API
+    exibeLoader()
     fetch(`${apiBaseUrl()}/users/login`, configuracoesRequisicao)
       .then((response) => {
         /* Verifica status de sucesso na execução da promisse */
@@ -75,10 +76,12 @@ botaoAcessarLogin.addEventListener("click", function (evento) {
         console.log(resposta);
         // Chama função ao obter sucesso no login
         loginSucesso(resposta.jwt)
+        ocultaLoader();
       })
       .catch(error => {
         // Chama função ao obter algum erro no login
-        loginErro(error.status)
+        loginErro(error.status);
+        ocultaLoader();
       });
 
     //  Ao obter o sucesso, recebe o json (token JWT) do usuário
